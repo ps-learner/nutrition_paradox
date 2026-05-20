@@ -60,7 +60,8 @@ def insert_data(df_obesity, df_malnutrition):
 if __name__ == "__main__":
     import pandas as pd
 
-    df_obesity = pd.read_csv("../data/processed/obesity_clean.csv")
-    df_malnutrition = pd.read_csv("../data/processed/malnutrition_clean.csv")
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    df_obesity = pd.read_csv (BASE_DIR / "data" / "processed" / "obesity_clean.csv")
+    df_malnutrition = pd.read_csv (BASE_DIR / "data" / "processed" / "malnutrition_clean.csv")
     create_tables()
     insert_data(df_obesity, df_malnutrition)
